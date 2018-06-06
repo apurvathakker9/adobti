@@ -1,0 +1,13 @@
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessLogic\bin\Debug\BusinessLogic.dll
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessLogic\bin\Debug\BusinessLogic.pdb
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessLogic\bin\Debug\BusinessObjects.dll
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessLogic\bin\Debug\DataAccess.dll
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessLogic\bin\Debug\EntityFramework.dll
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessLogic\bin\Debug\BusinessObjects.pdb
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessLogic\bin\Debug\DataAccess.pdb
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessLogic\bin\Debug\DataAccess.dll.config
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessLogic\bin\Debug\EntityFramework.xml
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessLogic\obj\Debug\BusinessLogic.dll
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessLogic\obj\Debug\BusinessLogic.pdb

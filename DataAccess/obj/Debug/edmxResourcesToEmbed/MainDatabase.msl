@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ADOBathindaModelStoreContainer" CdmEntityContainer="ADOBathindaEntities">
+    <EntitySetMapping Name="Districts">
+      <EntityTypeMapping TypeName="ADOBathindaModel.District">
+        <MappingFragment StoreEntitySet="Districts">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jobs">
+      <EntityTypeMapping TypeName="ADOBathindaModel.Job">
+        <MappingFragment StoreEntitySet="Jobs">
+          <ScalarProperty Name="PreviousGrant" ColumnName="PreviousGrant" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="IsPathStored" ColumnName="IsPathStored" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="EndLongitude" ColumnName="EndLongitude" />
+          <ScalarProperty Name="EndLatitude" ColumnName="EndLatitude" />
+          <ScalarProperty Name="StartLongitude" ColumnName="StartLongitude" />
+          <ScalarProperty Name="StartLatitude" ColumnName="StartLatitude" />
+          <ScalarProperty Name="EstimatedBudget" ColumnName="EstimatedBudget" />
+          <ScalarProperty Name="WorkNameId" ColumnName="WorkNameId" />
+          <ScalarProperty Name="VillageId" ColumnName="VillageId" />
+          <ScalarProperty Name="SchemaId" ColumnName="SchemaId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Villages">
+      <EntityTypeMapping TypeName="ADOBathindaModel.Village">
+        <MappingFragment StoreEntitySet="Villages">
+          <ScalarProperty Name="Block" ColumnName="Block" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkNames">
+      <EntityTypeMapping TypeName="ADOBathindaModel.WorkName">
+        <MappingFragment StoreEntitySet="WorkNames">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grants">
+      <EntityTypeMapping TypeName="ADOBathindaModel.Grant">
+        <MappingFragment StoreEntitySet="Grants">
+          <ScalarProperty Name="EndLongitude" ColumnName="EndLongitude" />
+          <ScalarProperty Name="EndLatitude" ColumnName="EndLatitude" />
+          <ScalarProperty Name="StartLongitude" ColumnName="StartLongitude" />
+          <ScalarProperty Name="StartLatitude" ColumnName="StartLatitude" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="CertificateDate" ColumnName="CertificateDate" />
+          <ScalarProperty Name="CertificateNumber" ColumnName="CertificateNumber" />
+          <ScalarProperty Name="RemainingMoney" ColumnName="RemainingMoney" />
+          <ScalarProperty Name="SpentMoney" ColumnName="SpentMoney" />
+          <ScalarProperty Name="RecievedMoney" ColumnName="RecievedMoney" />
+          <ScalarProperty Name="MeetingDate" ColumnName="MeetingDate" />
+          <ScalarProperty Name="WorkNameId" ColumnName="WorkNameId" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="VillageId" ColumnName="VillageId" />
+          <ScalarProperty Name="SchemaId" ColumnName="SchemaId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ADOBathindaModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schemas">
+      <EntityTypeMapping TypeName="ADOBathindaModel.Schema">
+        <MappingFragment StoreEntitySet="Schemas">
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="GrantMoney" ColumnName="GrantMoney" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

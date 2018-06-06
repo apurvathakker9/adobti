@@ -1,0 +1,6 @@
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessObjects\bin\Debug\BusinessObjects.dll
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessObjects\bin\Debug\BusinessObjects.pdb
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessObjects\obj\Debug\BusinessObjects.csproj.CoreCompileInputs.cache
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessObjects\obj\Debug\BusinessObjects.dll
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessObjects\obj\Debug\BusinessObjects.pdb
+F:\DotnetProjects\WebApplications\ADOBathinda\BusinessObjects\obj\Debug\BusinessObjects.csprojResolveAssemblyReference.cache

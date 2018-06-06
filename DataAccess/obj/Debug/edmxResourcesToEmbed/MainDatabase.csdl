@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ADOBathindaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ADOBathindaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Districts" EntityType="ADOBathindaModel.District" />
+    <EntitySet Name="Jobs" EntityType="ADOBathindaModel.Job" />
+    <EntitySet Name="Villages" EntityType="ADOBathindaModel.Village" />
+    <EntitySet Name="WorkNames" EntityType="ADOBathindaModel.WorkName" />
+    <AssociationSet Name="FK_Villages_Districts" Association="ADOBathindaModel.FK_Villages_Districts">
+      <End Role="District" EntitySet="Districts" />
+      <End Role="Village" EntitySet="Villages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Jobs_Villages" Association="ADOBathindaModel.FK_Jobs_Villages">
+      <End Role="Village" EntitySet="Villages" />
+      <End Role="Job" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Jobs_WorkNames" Association="ADOBathindaModel.FK_Jobs_WorkNames">
+      <End Role="WorkName" EntitySet="WorkNames" />
+      <End Role="Job" EntitySet="Jobs" />
+    </AssociationSet>
+    <EntitySet Name="Grants" EntityType="ADOBathindaModel.Grant" />
+    <AssociationSet Name="FK_Grants_Districts" Association="ADOBathindaModel.FK_Grants_Districts">
+      <End Role="District" EntitySet="Districts" />
+      <End Role="Grant" EntitySet="Grants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Grants_Villages" Association="ADOBathindaModel.FK_Grants_Villages">
+      <End Role="Village" EntitySet="Villages" />
+      <End Role="Grant" EntitySet="Grants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Grants_WorkNames" Association="ADOBathindaModel.FK_Grants_WorkNames">
+      <End Role="WorkName" EntitySet="WorkNames" />
+      <End Role="Grant" EntitySet="Grants" />
+    </AssociationSet>
+    <EntitySet Name="Users" EntityType="ADOBathindaModel.User" />
+    <AssociationSet Name="FK_Users_Districts" Association="ADOBathindaModel.FK_Users_Districts">
+      <End Role="District" EntitySet="Districts" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <EntitySet Name="Schemas" EntityType="ADOBathindaModel.Schema" />
+    <AssociationSet Name="FK_Grants_Schemas" Association="ADOBathindaModel.FK_Grants_Schemas">
+      <End Role="Schema" EntitySet="Schemas" />
+      <End Role="Grant" EntitySet="Grants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Jobs_Schemas" Association="ADOBathindaModel.FK_Jobs_Schemas">
+      <End Role="Schema" EntitySet="Schemas" />
+      <End Role="Job" EntitySet="Jobs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Villages" Relationship="ADOBathindaModel.FK_Villages_Districts" FromRole="District" ToRole="Village" />
+    <NavigationProperty Name="Grants" Relationship="ADOBathindaModel.FK_Grants_Districts" FromRole="District" ToRole="Grant" />
+    <NavigationProperty Name="Users" Relationship="ADOBathindaModel.FK_Users_Districts" FromRole="District" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="SchemaId" Type="Guid" Nullable="false" />
+    <Property Name="VillageId" Type="Int32" Nullable="false" />
+    <Property Name="WorkNameId" Type="Int32" Nullable="false" />
+    <Property Name="EstimatedBudget" Type="Double" Nullable="false" />
+    <Property Name="StartLatitude" Type="Double" />
+    <Property Name="StartLongitude" Type="Double" />
+    <Property Name="EndLatitude" Type="Double" />
+    <Property Name="EndLongitude" Type="Double" />
+    <Property Name="IsVerified" Type="Boolean" Nullable="false" />
+    <Property Name="IsPathStored" Type="Boolean" Nullable="false" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PreviousGrant" Type="Guid" />
+    <NavigationProperty Name="Village" Relationship="ADOBathindaModel.FK_Jobs_Villages" FromRole="Job" ToRole="Village" />
+    <NavigationProperty Name="WorkName" Relationship="ADOBathindaModel.FK_Jobs_WorkNames" FromRole="Job" ToRole="WorkName" />
+    <NavigationProperty Name="Schema" Relationship="ADOBathindaModel.FK_Jobs_Schemas" FromRole="Job" ToRole="Schema" />
+  </EntityType>
+  <EntityType Name="Village">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DistrictId" Type="Int32" Nullable="false" />
+    <Property Name="Block" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="District" Relationship="ADOBathindaModel.FK_Villages_Districts" FromRole="Village" ToRole="District" />
+    <NavigationProperty Name="Jobs" Relationship="ADOBathindaModel.FK_Jobs_Villages" FromRole="Village" ToRole="Job" />
+    <NavigationProperty Name="Grants" Relationship="ADOBathindaModel.FK_Grants_Villages" FromRole="Village" ToRole="Grant" />
+  </EntityType>
+  <EntityType Name="WorkName">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Jobs" Relationship="ADOBathindaModel.FK_Jobs_WorkNames" FromRole="WorkName" ToRole="Job" />
+    <NavigationProperty Name="Grants" Relationship="ADOBathindaModel.FK_Grants_WorkNames" FromRole="WorkName" ToRole="Grant" />
+  </EntityType>
+  <Association Name="FK_Villages_Districts">
+    <End Type="ADOBathindaModel.District" Role="District" Multiplicity="1" />
+    <End Type="ADOBathindaModel.Village" Role="Village" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Village">
+        <PropertyRef Name="DistrictId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Jobs_Villages">
+    <End Type="ADOBathindaModel.Village" Role="Village" Multiplicity="1" />
+    <End Type="ADOBathindaModel.Job" Role="Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Village">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="VillageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Jobs_WorkNames">
+    <End Type="ADOBathindaModel.WorkName" Role="WorkName" Multiplicity="1" />
+    <End Type="ADOBathindaModel.Job" Role="Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkName">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="WorkNameId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Grant">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="SchemaId" Type="Guid" Nullable="false" />
+    <Property Name="VillageId" Type="Int32" Nullable="false" />
+    <Property Name="DistrictId" Type="Int32" Nullable="false" />
+    <Property Name="WorkNameId" Type="Int32" Nullable="false" />
+    <Property Name="MeetingDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="RecievedMoney" Type="Double" Nullable="false" />
+    <Property Name="SpentMoney" Type="Double" />
+    <Property Name="RemainingMoney" Type="Double" />
+    <Property Name="CertificateNumber" Type="Int32" Nullable="false" />
+    <Property Name="CertificateDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Comments" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="StartLatitude" Type="Double" />
+    <Property Name="StartLongitude" Type="Double" />
+    <Property Name="EndLatitude" Type="Double" />
+    <Property Name="EndLongitude" Type="Double" />
+    <NavigationProperty Name="District" Relationship="ADOBathindaModel.FK_Grants_Districts" FromRole="Grant" ToRole="District" />
+    <NavigationProperty Name="Village" Relationship="ADOBathindaModel.FK_Grants_Villages" FromRole="Grant" ToRole="Village" />
+    <NavigationProperty Name="WorkName" Relationship="ADOBathindaModel.FK_Grants_WorkNames" FromRole="Grant" ToRole="WorkName" />
+    <NavigationProperty Name="Schema" Relationship="ADOBathindaModel.FK_Grants_Schemas" FromRole="Grant" ToRole="Schema" />
+  </EntityType>
+  <Association Name="FK_Grants_Districts">
+    <End Type="ADOBathindaModel.District" Role="District" Multiplicity="1" />
+    <End Type="ADOBathindaModel.Grant" Role="Grant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Grant">
+        <PropertyRef Name="DistrictId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Grants_Villages">
+    <End Type="ADOBathindaModel.Village" Role="Village" Multiplicity="1" />
+    <End Type="ADOBathindaModel.Grant" Role="Grant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Village">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Grant">
+        <PropertyRef Name="VillageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Grants_WorkNames">
+    <End Type="ADOBathindaModel.WorkName" Role="WorkName" Multiplicity="1" />
+    <End Type="ADOBathindaModel.Grant" Role="Grant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkName">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Grant">
+        <PropertyRef Name="WorkNameId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DistrictId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="District" Relationship="ADOBathindaModel.FK_Users_Districts" FromRole="User" ToRole="District" />
+  </EntityType>
+  <Association Name="FK_Users_Districts">
+    <End Type="ADOBathindaModel.District" Role="District" Multiplicity="1" />
+    <End Type="ADOBathindaModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="DistrictId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Schema">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="GrantMoney" Type="Double" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Grants" Relationship="ADOBathindaModel.FK_Grants_Schemas" FromRole="Schema" ToRole="Grant" />
+    <NavigationProperty Name="Jobs" Relationship="ADOBathindaModel.FK_Jobs_Schemas" FromRole="Schema" ToRole="Job" />
+  </EntityType>
+  <Association Name="FK_Grants_Schemas">
+    <End Type="ADOBathindaModel.Schema" Role="Schema" Multiplicity="1" />
+    <End Type="ADOBathindaModel.Grant" Role="Grant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schema">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Grant">
+        <PropertyRef Name="SchemaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Jobs_Schemas">
+    <End Type="ADOBathindaModel.Schema" Role="Schema" Multiplicity="1" />
+    <End Type="ADOBathindaModel.Job" Role="Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schema">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="SchemaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

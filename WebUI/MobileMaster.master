@@ -1,0 +1,98 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MobileMaster.master.cs" Inherits="MobileMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <title><%: Page.Title %></title>
+    <link type="text/css" rel="stylesheet" href="Content/css/bootstrap.min.css" />
+    <%--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">--%>
+    <link type="text/css" rel="stylesheet" href="App_Themes/Default/User/Style.css" />
+    <script src="<%# ResolveUrl("~/Content/js/jquery-3.3.1.min.js") %>"></script>
+    <script src="<%#Page.ResolveUrl("~/Content/js/bootstrap.min.js") %>"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+       
+        .topnav{
+            position: sticky;
+            background-color: orange;
+            overflow: hidden;
+        }
+        .topnav a{
+            float: left;
+            color: black;
+            display: block;
+            text-align: center;
+            padding: 10px 10px;
+            text-decoration: none;
+            color: white;
+        }
+        .topnav a:hover{
+            background-color:darkslategrey;
+        }
+         .active{
+            background-color:darkslategrey;
+        }
+        .topnav .icon{display: none;}
+        @media screen and (max-width:1000px)
+        {
+            .topnav a:not(:first-child){display: none;}
+            .topnav a.icon{
+                display: block;
+                float: right;
+            }
+        }
+        @media screen and (max-width:1000px)
+        {
+            .topnav.responsive{position: relative;}
+            .topnav.responsive .icon{
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            .topnav.responsive a 
+            {
+                color: white;
+                text-align: center;
+                padding: 10px 10px;
+                text-decoration: none;
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+    
+    </style>
+    <script>
+    function myFunction(){
+    var x=document.getElementById("mytopnav");
+    if(x.className === "topnav")        {
+            x.className+=" responsive";            
+        }
+    else
+        x.className="topnav";
+    }
+    </script>
+</head>
+<body>
+     <nav class="topnav" id="mytopnav">
+        <a href="Login.aspx" >Grant Management System</a>
+        <a href="Login.aspx">Home</a>
+          <a href="Login.aspx" >Login</a>
+          <a href="ViewJobs.aspx" >View Jobs</a>
+         <a href="EnterMapDetails.aspx" >Map Details</a>
+          
+          <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </nav>
+    <form id="form1" runat="server">
+       
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

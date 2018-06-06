@@ -1,0 +1,13 @@
+F:\DotnetProjects\WebApplications\ADOBathinda\DataAccess\bin\Debug\DataAccess.dll.config
+F:\DotnetProjects\WebApplications\ADOBathinda\DataAccess\bin\Debug\DataAccess.dll
+F:\DotnetProjects\WebApplications\ADOBathinda\DataAccess\bin\Debug\DataAccess.pdb
+F:\DotnetProjects\WebApplications\ADOBathinda\DataAccess\bin\Debug\BusinessObjects.dll
+F:\DotnetProjects\WebApplications\ADOBathinda\DataAccess\bin\Debug\EntityFramework.dll
+F:\DotnetProjects\WebApplications\ADOBathinda\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+F:\DotnetProjects\WebApplications\ADOBathinda\DataAccess\bin\Debug\BusinessObjects.pdb
+F:\DotnetProjects\WebApplications\ADOBathinda\DataAccess\bin\Debug\EntityFramework.xml
+F:\DotnetProjects\WebApplications\ADOBathinda\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+F:\DotnetProjects\WebApplications\ADOBathinda\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+F:\DotnetProjects\WebApplications\ADOBathinda\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+F:\DotnetProjects\WebApplications\ADOBathinda\DataAccess\obj\Debug\DataAccess.dll
+F:\DotnetProjects\WebApplications\ADOBathinda\DataAccess\obj\Debug\DataAccess.pdb

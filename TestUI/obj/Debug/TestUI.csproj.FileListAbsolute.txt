@@ -1,0 +1,7 @@
+F:\DotnetProjects\WebApplications\ADOBathinda\TestUI\bin\Debug\TestUI.exe.config
+F:\DotnetProjects\WebApplications\ADOBathinda\TestUI\bin\Debug\TestUI.exe
+F:\DotnetProjects\WebApplications\ADOBathinda\TestUI\bin\Debug\TestUI.pdb
+F:\DotnetProjects\WebApplications\ADOBathinda\TestUI\obj\Debug\TestUI.csproj.CoreCompileInputs.cache
+F:\DotnetProjects\WebApplications\ADOBathinda\TestUI\obj\Debug\TestUI.exe
+F:\DotnetProjects\WebApplications\ADOBathinda\TestUI\obj\Debug\TestUI.pdb
+F:\DotnetProjects\WebApplications\ADOBathinda\TestUI\obj\Debug\TestUI.csprojResolveAssemblyReference.cache

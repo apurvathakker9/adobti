@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a2c9850b41b448d9919f10cd6b516967" Name="Diagram1">
+        <EntityTypeShape EntityType="ADOBathindaModel.District" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ADOBathindaModel.Job" Width="1.5" PointX="5.25" PointY="4.25" />
+        <EntityTypeShape EntityType="ADOBathindaModel.Village" Width="1.5" PointX="3" PointY="5.125" />
+        <EntityTypeShape EntityType="ADOBathindaModel.WorkName" Width="1.5" PointX="3" PointY="8.75" />
+        <AssociationConnector Association="ADOBathindaModel.FK_Villages_Districts" />
+        <AssociationConnector Association="ADOBathindaModel.FK_Jobs_Villages" />
+        <AssociationConnector Association="ADOBathindaModel.FK_Jobs_WorkNames" />
+        <EntityTypeShape EntityType="ADOBathindaModel.Grant" Width="1.5" PointX="8.25" PointY="3.875" />
+        <AssociationConnector Association="ADOBathindaModel.FK_Grants_Districts" />
+        <AssociationConnector Association="ADOBathindaModel.FK_Grants_Villages" />
+        <AssociationConnector Association="ADOBathindaModel.FK_Grants_WorkNames" />
+        <EntityTypeShape EntityType="ADOBathindaModel.User" Width="1.5" PointX="3" PointY="11.625" />
+        <AssociationConnector Association="ADOBathindaModel.FK_Users_Districts" />
+        <EntityTypeShape EntityType="ADOBathindaModel.Schema" Width="1.5" PointX="0.75" PointY="0.875" />
+        <AssociationConnector Association="ADOBathindaModel.FK_Grants_Schemas" />
+        <AssociationConnector Association="ADOBathindaModel.FK_Jobs_Schemas" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMaster.master.cs" Inherits="User" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="Content/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="App_Themes/Default/User/Style.css" />
+    <script src="<%# ResolveUrl("~/Content/js/jquery-3.3.1.min.js") %>"></script>
+    <script src="<%#Page.ResolveUrl("~/Content/js/bootstrap.min.js") %>"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+            <a class="navbar-brand" href="Default.aspx">ADO Bathinda</a>
+
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Default.aspx">Admin <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="schemeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Schemes</a>
+                        <div class="dropdown-menu" aria-labelledby="schemeDropdown">
+                            <a class="dropdown-item" href="AddScheme.aspx">Add New Scheme</a>
+                            <a class="dropdown-item" href="ViewSchemes.aspx">View All Schemes</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="jobDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Jobs
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="jobDropdown">
+                            <a class="dropdown-item" href="AddJob.aspx">Add New Job</a>
+                            <a class="dropdown-item" href="ViewVerifiedJobs.aspx">View Verified Jobs</a>
+                            <a class="dropdown-item" href="ViewAssignedJobs.aspx">View Assigned Jobs</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="grantDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Grants
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="grantDropdown">
+                            <a class="dropdown-item" href="AssignGrants.aspx">Assign New Grant</a>
+                            <a class="dropdown-item" href="ViewGrants.aspx">View Grants</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button class="btn btn-default">Logout</button>
+        </nav>
+        <div>
+            <asp:ContentPlaceHolder ID="content" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
